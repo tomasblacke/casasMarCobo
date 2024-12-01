@@ -31,8 +31,13 @@
             ],
             "tsConfig": "tsconfig.app.json",
             "assets": [
-              
-              "src/assets"
+              "src/assets",
+              "src/_redirects",
+              {
+                "glob": "**/*",
+                "input": "./node_modules/leaflet/dist/images/",
+                "output": "./assets/"
+              }
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
