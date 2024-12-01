@@ -1,0 +1,58 @@
+<main class="home">
+    <!-- Sección de Fotos -->
+    <section class="section photos-section" id="fotos" data-aos="fade-up">
+        <div class="container">
+            <!--<h2>Fotos</h2>-->
+            <app-photos-carousel></app-photos-carousel>
+        </div>
+    </section>
+
+    <!-- Sección de Ubicación -->
+    <section class="section location-section" id="ubicacion" data-aos="fade-up">
+        <div class="container">
+            <h2>Ubicación</h2>
+            <app-location></app-location>
+        </div>
+    </section>
+
+    <!-- Sección de Detalles de Casas -->
+    <section class="section houses-section">
+        <div class="container">
+            <h2 data-aos="fade-up" >Detalles de las Propiedades</h2> <!-- Este no se si ponerlo en terminos de ux ui no la veo bien-->
+            <div class="houses-grid">
+                <div 
+                    *ngFor="let house of houses; let i = index" 
+                    class="house-card"
+                    [attr.data-aos]="'fade-up'"
+                    [attr.data-aos-delay]="i * 100">
+                    <div class="image-container">
+                    <img 
+                        [ngSrc]="house.images[0].url" 
+                        [alt]="house.images[0].alt"
+                        width="300"
+                        height="200"
+                        loading="lazy"
+                        class="lazy-image">
+                    <div class="image-overlay">
+                        <span class="view-details">Ver detalles</span>
+                    </div>
+                    </div>
+                    <div class="house-info">
+                    <h3>{{house.name}}</h3>
+                    <p>{{house.shortDescription}}</p>
+                    <ul class="features">
+                        <li *ngFor="let feature of house.features">{{feature}}</li>
+                    </ul>
+                    <button class="view-more" routerLink="/details/{{house.id}}">
+                        Ver más detalles
+                    </button>
+                    </div>
+                </div>
+                </div>
+            </div>
+    </section>
+    <!-- Seccion de Formulario de contacto-->
+    <section class="section contact-section" id="contacto">
+        <app-contact-form></app-contact-form>
+    </section>
+</main>

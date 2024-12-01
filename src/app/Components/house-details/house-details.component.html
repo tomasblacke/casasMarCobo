@@ -1,0 +1,46 @@
+<div class="house-details-container" *ngIf="house">
+    <div class="image-gallery">
+    <div class="main-image">
+        <button class="nav-button prev" (click)="previousImage()" *ngIf="currentImageIndex > 0">
+        ‹
+        </button>
+        <img [src]="house.images[currentImageIndex].url" [alt]="house.images[currentImageIndex].alt">
+        <button class="nav-button next" (click)="nextImage()" 
+                *ngIf="currentImageIndex < house.images.length - 1">
+        ›
+        </button>
+    </div>
+    <div class="thumbnails">
+        <div 
+        *ngFor="let image of house.images; let i = index"
+        class="thumbnail"
+        [class.active]="i === currentImageIndex"
+        (click)="setCurrentImage(i)">
+        <img [src]="image.url" [alt]="image.alt">
+        </div>
+    </div>
+    </div>
+
+    <div class="house-info">
+    <h1>{{house.name}}</h1>
+    <p class="description">{{house.description}}</p>
+
+    <div class="features">
+        <h2>Características</h2>
+        <ul>
+        <li *ngFor="let feature of house.features">{{feature}}</li>
+        </ul>
+    </div>
+
+    <div class="location-info">
+        <h2>Ubicación</h2>
+        <p>{{house.location.address}}</p>
+        <div id="detail-map" class="map-container"></div>
+    </div>
+
+    <div class="contact-section">
+        <h2>¿Interesado en vacacionar en esta propiedad?</h2>
+        <button class="contact-button" routerLink="/contact">Contactar</button>
+    </div>
+    </div>
+</div>

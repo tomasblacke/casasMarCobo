@@ -1,0 +1,12 @@
+<div class="carousel-container">
+    <carousel [interval]="2000" [showIndicators]="true"[isAnimated]="true">
+    <slide *ngFor="let house of houses">
+        <div class="carousel-slide">
+        <img [src]="house.images[0].url" [alt]="house.images[0].alt" class="carousel-image">
+        <div class="carousel-caption">
+            <h3>{{house.name}}</h3>
+        </div>
+        </div>
+    </slide>
+    </carousel>
+</div>

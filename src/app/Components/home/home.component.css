@@ -1,0 +1,142 @@
+.home {
+    padding-top: 64px;
+}
+
+.section {
+    padding: 4rem 0;
+    
+    &:nth-child(odd) {
+    background-color: #f5f5f5;
+    }
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+h2 {
+    color: #60A4BF;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.houses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.house-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    
+    &:hover {
+    transform: translateY(-5px);
+    
+    .image-overlay {
+        opacity: 1;
+    }
+    }
+}
+
+.image-container {
+    position: relative;
+    overflow: hidden;
+    
+    .lazy-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    }
+    
+    .image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(96, 164, 191, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    
+    .view-details {
+        color: white;
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        border: 2px solid white;
+        border-radius: 4px;
+    }
+    }
+}
+
+.house-info {
+    padding: 1.5rem;
+    
+    h3 {
+    color: #60A4BF;
+    margin: 0 0 1rem;
+    }
+    
+    .features {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+    
+    li {
+        padding: 0.25rem 0;
+        color: #666;
+        &:before {
+        content: "•";
+        color: #98D90B;
+        margin-right: 0.5rem;
+        }
+    }
+    }
+    
+    .view-more {
+    background-color: #98D90B;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    
+    &:hover {
+        background-color: #80B4BF;
+    }
+    }
+}
+
+/* Skeleton loading animation*/
+@keyframes loading {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+.lazy-image {
+    &:not([src]) {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+    }
+}
+
+@media (max-width: 768px) {
+    .section {
+    padding: 2rem 0;
+    }
+    
+    .houses-grid {
+    grid-template-columns: 1fr;
+    }
+}

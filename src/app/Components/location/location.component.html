@@ -1,0 +1,15 @@
+<div class="location-container">
+    <div class="location-info">
+    <h2>Nuestras casas en alquiler</h2>
+    <p>Encuentra nuestras casas en el mapa</p>
+    </div>
+    
+    <div id="map" class="map-container"></div>
+
+    <div class="locations-list">
+    <div *ngFor="let house of houses" class="location-card">
+        <h3>{{house.name}}</h3>
+        <p class="address">{{house.location.address}}</p>
+    </div>
+    </div>
+</div>

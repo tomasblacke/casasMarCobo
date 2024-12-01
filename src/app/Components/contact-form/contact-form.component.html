@@ -1,0 +1,88 @@
+<div class="contact-container">
+    <div class="contact-header">
+    <h2>Contacta con nosotros</h2>
+    <p>Completa el formulario y nos pondremos en contacto contigo</p>
+    </div>
+
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
+    <div class="form-group">
+        <label for="name">Nombre <span class="required">*</span></label>
+        <input 
+        type="text" 
+        id="name" 
+        formControlName="name"
+        [class.is-invalid]="contactForm.get('name')?.invalid && contactForm.get('name')?.touched"
+        placeholder="Tu nombre">
+        <div *ngIf="contactForm.get('name')?.invalid && contactForm.get('name')?.touched" class="error-message">
+        <span>El nombre es requerido</span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="phone">Teléfono <span class="required">*</span></label>
+        <input 
+        type="tel" 
+        id="phone" 
+        formControlName="phone"
+        [class.is-invalid]="contactForm.get('phone')?.invalid && contactForm.get('phone')?.touched"
+        placeholder="123456789">
+        <div *ngIf="contactForm.get('phone')?.invalid && contactForm.get('phone')?.touched" class="error-message">
+        <span>El teléfono es requerido</span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="email">Email <span class="required">*</span></label>
+        <input 
+        type="email" 
+        id="email" 
+        formControlName="email"
+        [class.is-invalid]="contactForm.get('email')?.invalid && contactForm.get('email')?.touched"
+        placeholder="tu@email.com">
+        <div *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched" class="error-message">
+        <span *ngIf="contactForm.get('email')?.errors?.['required']">El email es requerido</span>
+        <span *ngIf="contactForm.get('email')?.errors?.['email']">Introduce un email válido</span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="subject">Asunto <span class="required">*</span></label>
+        <input 
+        type="text" 
+        id="subject" 
+        formControlName="subject"
+        [class.is-invalid]="contactForm.get('subject')?.invalid && contactForm.get('subject')?.touched"
+        placeholder="Asunto del mensaje">
+        <div *ngIf="contactForm.get('subject')?.invalid && contactForm.get('subject')?.touched" class="error-message">
+        <span>El asunto es requerido</span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="message">Mensaje <span class="required">*</span></label>
+        <textarea 
+        id="message" 
+        formControlName="message"
+        [class.is-invalid]="contactForm.get('message')?.invalid && contactForm.get('message')?.touched"
+        placeholder="Escribe tu mensaje aquí"
+        rows="5"></textarea>
+        <div *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched" class="error-message">
+        <span>El mensaje es requerido</span>
+        </div>
+    </div>
+
+    <div class="form-actions">
+        <button type="submit" [disabled]="contactForm.invalid || sending">
+        {{ sending ? 'Enviando...' : 'Enviar mensaje' }}
+        </button>
+    </div>
+
+    <div *ngIf="emailSent" class="success-message">
+        ¡Mensaje enviado correctamente! Nos pondremos en contacto contigo pronto.
+    </div>
+
+    <div *ngIf="errorSending" class="error-message alert">
+        Hubo un error al enviar el mensaje. Por favor, intenta nuevamente.
+    </div>
+    </form>
+</div>

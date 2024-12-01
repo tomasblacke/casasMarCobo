@@ -1,0 +1,26 @@
+<header class="header">
+    <div class="header-container">
+        <div class="logo">
+        <a routerLink="/">
+            <h1>Casas Mar de Cobo</h1>
+        </a>
+        </div>
+
+    <!-- Botón hamburguesa para móvil -->
+        <button class="menu-toggle" (click)="toggleMenu()" [class.active]="isMenuOpen">
+        <span></span>
+        <span></span>
+        <span></span>
+        </button>
+
+    <!-- Menú de navegación -->
+    <nav class="nav-menu" [class.active]="isMenuOpen">
+        <ul>
+            <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Inicio</a></li>
+            <!--<li><a routerLink="/photos" routerLinkActive="active">Fotos</a></li>
+            <li><a routerLink="/location" routerLinkActive="active">Ubicación</a></li>-->
+            <li><a routerLink="/contact" routerLinkActive="active">Contacto</a></li>
+        </ul>
+    </nav>
+    </div>
+</header>
