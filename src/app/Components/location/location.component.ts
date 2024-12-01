@@ -1,6 +1,7 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { HousesService } from '../../Services/houses.service';
 import * as L from 'leaflet';
+import { icon, Icon } from 'leaflet';
 
 
 @Component({
@@ -11,6 +12,14 @@ import * as L from 'leaflet';
 export class LocationComponent  implements OnInit, AfterViewInit {
   private map: L.Map | undefined;
   houses: any[] = [];
+
+  private customIcon = icon({
+    iconUrl: 'assets/marker-icon.png',
+    shadowUrl: 'assets/marker-shadow.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34]
+  });
 
   
   constructor(private housesService: HousesService) {}
@@ -33,7 +42,7 @@ export class LocationComponent  implements OnInit, AfterViewInit {
 
     // Agregamos marcadores para cada casa
     this.houses.forEach(house => {
-      const marker = L.marker([house.location.coordinates.lat, house.location.coordinates.lng])
+      const marker = L.marker([house.location.coordinates.lat, house.location.coordinates.lng], { icon: this.customIcon })
         .addTo(this.map!)
         .bindPopup(`
           <strong>${house.name}</strong><br>

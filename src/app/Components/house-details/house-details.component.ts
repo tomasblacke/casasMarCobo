@@ -1,5 +1,6 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import * as L from 'leaflet';
+import { icon, Icon } from 'leaflet';
 import { ActivatedRoute } from '@angular/router';
 import { HousesService } from '../../Services/houses.service';
 import { house } from '../../Interface/housesInterface';
@@ -14,6 +15,14 @@ export class HouseDetailsComponent implements OnInit, AfterViewInit {
   house: house | undefined;
   currentImageIndex = 0;
   private map?: L.Map;
+
+  private customIcon = icon({
+    iconUrl: 'assets/marker-icon.png',
+    shadowUrl: 'assets/marker-shadow.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34]
+  });
 
   constructor(
     private route: ActivatedRoute,
@@ -44,7 +53,7 @@ export class HouseDetailsComponent implements OnInit, AfterViewInit {
         attribution: '© OpenStreetMap contributors'
       }).addTo(this.map);
 
-      L.marker([this.house.location.coordinates.lat, this.house.location.coordinates.lng])
+      L.marker([this.house.location.coordinates.lat, this.house.location.coordinates.lng], { icon: this.customIcon })
         .addTo(this.map)
         .bindPopup(this.house.location.address)
         .openPopup();
