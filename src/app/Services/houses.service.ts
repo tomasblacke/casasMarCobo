@@ -25,8 +25,15 @@ export class HousesService {
         'Garage p/ 1 auto'
       ],
       images: [
-        { url: './assets/images/casa1-1.jpeg', alt: 'Fachada Roja' },
-        { url: './assets/images/casa1-2.jpeg', alt: 'Interior Roja' }
+        { url: './assets/images/casa1-1.jpg', alt: 'Fachada Roja' },
+        { url: './assets/images/casa1-2.jpg', alt: 'Interior Roja' },
+        { url: './assets/images/casa1-3.jpg', alt: 'Interior Roja' },
+        { url: './assets/images/casa1-4.jpg', alt: 'Interior Roja' },
+        { url: './assets/images/casa1-5.jpg', alt: 'Interior Roja' },
+        { url: './assets/images/casa1-6.jpg', alt: 'Interior Roja' },
+        { url: './assets/images/casa1-7.jpg', alt: 'Interior Roja' },
+        { url: './assets/images/casa1-8.jpg', alt: 'Interior Roja' },
+        { url: './assets/images/casa1-9.jpg', alt: 'Interior Roja' }
       ],
       location: {
         address: 'Reconquista 200',// ver por que no me acuerdo la direccion complete
@@ -54,8 +61,17 @@ export class HousesService {
         'Juegos Infantiles'
       ],
       images: [
-        { url: 'assets/images/casa2-1.jpeg', alt: 'Fachada Verde' },
-        { url: 'assets/images/casa2-2.jpeg', alt: 'Interior Verde' }
+        { url: 'assets/images/casa2-1.jpg', alt: 'Fachada Verde' },
+        { url: 'assets/images/casa2-2.jpg', alt: 'Interior Verde' },
+        { url: 'assets/images/casa2-3.jpg', alt: 'Interior Verde' },
+        { url: 'assets/images/casa2-4.jpg', alt: 'Interior Verde' },
+        { url: 'assets/images/casa2-5.jpg', alt: 'Interior Verde' },
+        { url: 'assets/images/casa2-6.jpg', alt: 'Interior Verde' },
+        { url: 'assets/images/casa2-7.jpg', alt: 'Interior Verde' },
+        { url: 'assets/images/casa2-8.jpg', alt: 'Interior Verde' },
+        { url: 'assets/images/casa2-9.jpg', alt: 'Interior Verde' },
+        { url: 'assets/images/casa2-10.jpg', alt: 'Interior Verde' },
+        { url: 'assets/images/casa2-11.jpg', alt: 'Interior Verde' }
       ],
       location: {
         address: 'Del Buen Orden 137,',// ver por que no me acuerdo la direccion completa
