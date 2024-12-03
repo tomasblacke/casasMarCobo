@@ -1,6 +1,6 @@
 # CasasMarCobo
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.7.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.7. The design objective was to create a fast and user-friendly interface for clients interested in inquiring about one of the two properties offered by the complex. Each inquiry is sent to the client’s email, which receives the details from the form previously filled out by the user.
 
 ## Development server
 
