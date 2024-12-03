@@ -36,7 +36,7 @@ export class HouseDetailsComponent implements OnInit, AfterViewInit {
     });
   }
   ngAfterViewInit() {
-    // Pequeño timeout para asegurar que el DOM esté listo
+    // Seteamos un timeout para dejar que el DOM se prepare
     setTimeout(() => {
       this.initMap();
     }, 100);

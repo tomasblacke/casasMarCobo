@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+
 import { house } from '../Interface/housesInterface';
 
 @Injectable({
@@ -74,7 +73,7 @@ export class HousesService {
         { url: 'assets/images/casa2-11.jpg', alt: 'Interior Verde' }
       ],
       location: {
-        address: 'Del Buen Orden 137,',// ver por que no me acuerdo la direccion completa
+        address: 'Del Buen Orden 137',// ver por que no me acuerdo la direccion completa
         coordinates: {
           lat: -37.7776462194929,
           lng: -57.452088158810035

@@ -36,3 +36,4 @@
 :host ::ng-deep .carousel-item {
     transition: opacity 0.7s ease-in-out;
 }
+/*Se utiliza ng-deep para romper con la regla de encapsulamiento en el estilos
