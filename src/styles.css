@@ -1,14 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
+
 @import 'aos/dist/aos.css';
-/* Agregar en styles.css */
+
 app-contact-form, 
 app-location,
 app-photos-carousel {
     display: block;
-  padding-top: 64px; /* Esta altura debe coincidir con la altura de tu header */
+  padding-top: 64px; 
 }
 
-/* Si estás dentro de home, no necesitas el padding porque el home ya lo tiene */
+
 .home app-contact-form,
 .home app-location,
 .home app-photos-carousel {
